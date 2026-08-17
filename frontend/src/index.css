@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+[data-theme="midnight"] {
+  --bg: #020617;
+  --bg-elevated: #0f172a;
+  --bg-card: #0f172a;
+  --border: #1e293b;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --accent: #8b5cf6;
+  --accent-hover: #7c3aed;
+  --accent-muted: #a78bfa;
+  --user-bubble: rgba(139, 92, 246, 0.18);
+  --user-border: rgba(139, 92, 246, 0.35);
+}
+
+[data-theme="slate"] {
+  --bg: #0c0f14;
+  --bg-elevated: #151a22;
+  --bg-card: #151a22;
+  --border: #2a3341;
+  --text: #e8edf5;
+  --text-muted: #8b98a8;
+  --accent: #64748b;
+  --accent-hover: #94a3b8;
+  --accent-muted: #94a3b8;
+  --user-bubble: rgba(100, 116, 139, 0.25);
+  --user-border: rgba(148, 163, 184, 0.35);
+}
+
+[data-theme="ember"] {
+  --bg: #0c0a09;
+  --bg-elevated: #1c1917;
+  --bg-card: #1c1917;
+  --border: #292524;
+  --text: #fafaf9;
+  --text-muted: #a8a29e;
+  --accent: #f59e0b;
+  --accent-hover: #d97706;
+  --accent-muted: #fbbf24;
+  --user-bubble: rgba(245, 158, 11, 0.15);
+  --user-border: rgba(245, 158, 11, 0.35);
+}
+
+[data-theme="forest"] {
+  --bg: #052e16;
+  --bg-elevated: #064e3b;
+  --bg-card: #064e3b;
+  --border: #065f46;
+  --text: #ecfdf5;
+  --text-muted: #6ee7b7;
+  --accent: #10b981;
+  --accent-hover: #059669;
+  --accent-muted: #34d399;
+  --user-bubble: rgba(16, 185, 129, 0.18);
+  --user-border: rgba(52, 211, 153, 0.35);
+}
+
+[data-theme="ocean"] {
+  --bg: #0b1220;
+  --bg-elevated: #0f2744;
+  --bg-card: #0f2744;
+  --border: #1e3a5f;
+  --text: #e0f2fe;
+  --text-muted: #7dd3fc;
+  --accent: #0ea5e9;
+  --accent-hover: #0284c7;
+  --accent-muted: #38bdf8;
+  --user-bubble: rgba(14, 165, 233, 0.18);
+  --user-border: rgba(56, 189, 248, 0.35);
+}
+
+[data-theme="light"] {
+  --bg: #f8fafc;
+  --bg-elevated: #ffffff;
+  --bg-card: #ffffff;
+  --border: #e2e8f0;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --accent: #7c3aed;
+  --accent-hover: #6d28d9;
+  --accent-muted: #8b5cf6;
+  --user-bubble: rgba(124, 58, 237, 0.1);
+  --user-border: rgba(124, 58, 237, 0.25);
+}
+
+html, body, #root { min-height: 100%; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.bg-surface-950 { background-color: var(--bg) !important; }
+.bg-surface-900 { background-color: var(--bg-elevated) !important; }
+.bg-surface-800 { background-color: color-mix(in srgb, var(--bg-elevated) 88%, white 6%) !important; }
+.border-slate-800, .border-slate-700 { border-color: var(--border) !important; }
+.text-slate-100, .text-slate-200 { color: var(--text) !important; }
+.text-slate-300, .text-slate-400, .text-slate-500 { color: var(--text-muted) !important; }
+.bg-accent { background-color: var(--accent) !important; }
+.hover\:bg-accent-hover:hover { background-color: var(--accent-hover) !important; }
+.text-accent-muted { color: var(--accent-muted) !important; }
+.bg-accent\/15 { background-color: color-mix(in srgb, var(--accent) 15%, transparent) !important; }
+.bg-accent\/20 { background-color: color-mix(in srgb, var(--accent) 20%, transparent) !important; }
+.bg-accent\/25 { background-color: color-mix(in srgb, var(--accent) 25%, transparent) !important; }
+.ring-accent, .focus\:ring-accent:focus { --tw-ring-color: var(--accent) !important; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+}
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0.5rem 0.9rem; border-radius: 0.65rem; font-size: 0.875rem; font-weight: 500;
+  transition: 0.15s ease; border: 1px solid transparent;
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-hover); }
+.btn-ghost { background: transparent; color: var(--text-muted); border-color: var(--border); }
+.btn-ghost:hover { color: var(--text); }
